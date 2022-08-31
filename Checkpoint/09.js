@@ -30,11 +30,18 @@ const { BinarySearchTree } = require("../DS");
 
 BinarySearchTree.prototype.searchPrice = function (precio) {
     // Tu código aquí
-
+    if (precio <= 0) return "Error";
+    if (this.value === precio) return true;
+    if (precio < this.value && this.left) {
+        return this.left.searchPrice(precio);
+    } else if (precio > this.value && this.right) {
+        return this.right.searchPrice(precio);
+    }
+    return false;
 };
 
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {
- BinarySearchTree
+    BinarySearchTree
 };

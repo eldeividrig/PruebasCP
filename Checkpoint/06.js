@@ -68,10 +68,32 @@ const { BinarySearchTree } = require("../DS");
 
 BinarySearchTree.prototype.agregarProductos = function (nombreProducto, productos) {
   // Tu código aquí:
-
+  if (productos[nombreProducto] === undefined) {
+    return "Producto inexistente";
+  } else if (nombreProducto === this.value) {
+    return "Ya existe el producto";
+  } else if (productos.nombreProducto < this.value) {
+    if (this.left) {
+      return this.left.agregarProductos(nombreProducto, productos);
+    }
+  } else if (this.right) {
+    return this.right.agregarProductos(nombreProducto, productos);
+  }
+  if (productos[nombreProducto] < productos[this.value]) {
+    var newTree = new BinarySearchTree(nombreProducto);
+    this.left = newTree;
+    return newTree;
+  }
+  if (productos[nombreProducto] > productos[this.value]) {
+    var newTree = new BinarySearchTree(nombreProducto);
+    this.right = newTree;
+    return newTree;
+  }
 };
+
+
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {
-    BinarySearchTree
+  BinarySearchTree
 };

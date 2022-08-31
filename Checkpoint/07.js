@@ -15,8 +15,25 @@
 //    estudiados. NO SE PUEDE USAR EL MÉTODO SORT() DE ARRAY.
 
 function ordenarPrecios(arr) {
-    // Tu código aquí:
-
+  // Tu código aquí:
+  let swap = true;
+  let max = arr.length - 1;
+  if (arr.includes(0)) {
+    return false;
+  }
+  while (swap) {
+    swap = false;
+    for (let i = 0; i < max; i++) {
+      if (arr[i] > arr[i + 1]) {
+        let aux = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = aux;
+        swap = true;
+      }
+    }
+    max--;
+  }
+  return (arr);
 }
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {

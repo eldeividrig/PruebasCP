@@ -29,7 +29,16 @@
 
 function devuelveMayores(lista, valor) {
   // Tu código aquí:
-
+  let counter = 0;
+  let current = lista.head;
+  while (current) {
+    if (current.value > valor) {
+      counter++;
+    }
+    current = current.next;
+  }
+  if(counter === 0) return "Sin precios";
+  return counter;
 }
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️

@@ -22,7 +22,12 @@
 
 const calcularIndice = (n) => {
   // Tu código aquí:
-
+  if (n === 0) return 15;
+  if (n === 1) return 25;
+  if (n>1) {
+    return calcularIndice(n-1) + calcularIndice(n-2);
+  }
+  if(n<0) return false;
 }
 
 

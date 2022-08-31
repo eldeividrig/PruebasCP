@@ -19,8 +19,10 @@
 
 function ingresoEmpleado(horario) {
 // Tu código aquí:
-
 }
+
+
+
 
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
