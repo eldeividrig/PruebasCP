@@ -209,14 +209,20 @@ let empleados = [
     { nombre: "Mati", ingresoA: 10 },
     { nombre: "Juani", ingresoA: 7 },
 ];
-empleados
 
 function ingresoEmpleado(horario) {
     // Tu código aquí:
-    return true
+    let arr = [];
+    return function ingresosHorario(empleados) {
+        empleados.filter(objeto => { //aca puedo usar filter o forEach
+            if (objeto.ingresoA <= horario) {
+                arr.push(objeto.nombre);
+            }
+        });
+        return arr;
+    }
 }
 
 const ingresosHorario = ingresoEmpleado(9);
-
-console.log(typeof ingresosHorario)
+console.log(ingresosHorario(empleados));
 

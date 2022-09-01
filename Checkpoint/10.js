@@ -19,8 +19,16 @@
 
 function ingresoEmpleado(horario) {
 // Tu código aquí:
+    let arr = [];
+    return function ingresosHorario(empleados) {
+        empleados.filter(objeto => {
+            if (objeto.ingresoA <= horario) {
+                arr.push(objeto.nombre);
+            }
+        });
+        return arr;
+    }
 }
-
 
 
 
